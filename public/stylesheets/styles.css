@@ -1,0 +1,15 @@
+.loginbox {
+  width: 500px;
+  margin: auto;
+}
+
+.userbox-wrapper {
+  background-image: linear-gradient(#5f2c82,#49a09d);
+}
+
+.user-subt-btn {
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
+

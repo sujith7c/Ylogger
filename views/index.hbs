@@ -1,2 +1,50 @@
-<h1>{{title}}</h1>
-<p>Welcome to {{title}}</p>
+{{>nav/nav}}
+<main>
+    <div class="userbox-wrapper">
+        <div class="loginbox">
+            <div>
+                <div>
+                    <ul class="nav nav-tabs">
+                        <li class="nav-item">
+                            <a class="nav-link active" role="tab" data-toggle="tab" href="#tab-1">Login</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" role="tab" data-toggle="tab" href="#tab-2">Register</a>
+                        </li>
+                    </ul>
+                    <div class="tab-content">
+                        <div class="tab-pane active" role="tabpanel" id="tab-1">
+                            <form>
+                                <div class="p-2">
+                                    <div class="d-inline-block p-1">
+                                        <label class="text-capitalize text-light">USER NAME</label>
+                                    </div>
+                                    <div class="d-inline-block">
+                                        <input class="form-control" type="text">
+                                    </div>
+                                </div>
+                                <div class="p-2">
+                                    <div class="d-inline-block p-1">
+                                        <label class="text-light border-info">PASSWORD</label>
+                                        </div>
+                                    <div class="d-inline-block">
+                                        <input class="form-control" type="password">
+                                    </div>
+                                </div>
+                                <div class="user-subt-btn p-2">
+                                    <button class="btn btn-primary text-center" type="button">Login</button>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="tab-pane" role="tabpanel" id="tab-2">
+                            <form></form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+{{>footer/footer}}
+
+
