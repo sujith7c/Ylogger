@@ -1,10 +1,10 @@
 .loginbox {
   width: 500px;
   margin: auto;
+  background-image: linear-gradient(#5f2c82,#49a09d);
 }
 
 .userbox-wrapper {
-  background-image: linear-gradient(#5f2c82,#49a09d);
 }
 
 .user-subt-btn {
@@ -13,3 +13,9 @@
   display: block;
 }
 
+.user-login-page {
+}
+
+
+.body-class {
+}
