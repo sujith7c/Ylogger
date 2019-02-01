@@ -19,3 +19,20 @@
 
 .body-class {
 }
+
+.content-header {
+  background: #299be4;
+  color: #fff;
+  padding: 16px 30px;
+}
+
+.pager {
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  padding: 5px;
+}
+
+.material-icons.user-delete-button {
+  color: #ff0000;
+}
