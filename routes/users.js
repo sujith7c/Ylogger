@@ -1,5 +1,6 @@
 var express = require('express');
 var router = express.Router();
+require('dotenv').config() 
 
 
 /* GET home page. */
@@ -9,6 +10,7 @@ router.get('/', function(req, res, next) {
 
 /* GET Users List Page. */
 router.get('/list', function(req, res, next) {
+
   res.render('pages/users/list', { title: 'User Management' });
 });
 
