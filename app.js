@@ -4,6 +4,7 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var hbs = require('express-hbs');
+var mongoDB = require('./lib/db/mongo.js');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
@@ -37,6 +38,7 @@ app.use('/events', ylinkRouter);
 app.use(function(req, res, next) {
   next(createError(404));
 });
+mongoDB.connect();
 
 // error handler
 app.use(function(err, req, res, next) {

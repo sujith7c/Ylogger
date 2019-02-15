@@ -14,7 +14,7 @@
           </ul>
           <div class="tab-content">
             <div class="tab-pane" role="tabpanel" id="tab-1">
-              <form>
+              <form method="POST" action="/login">
                 <div class="text-center p-2">
                   <div class="text-left p-1">
                     <label class="text-capitalize text-light">USER NAME</label>
@@ -32,38 +32,61 @@
                   </div>
                 </div>
                 <div class="text-center p-2">
-                  <button class="btn btn-primary text-center login-btn" type="button">Login</button>
+                  <button class="btn btn-primary text-center login-btn" type="submit">Login</button>
                 </div>
               </form>
             </div>
             <div class="tab-pane active" role="tabpanel" id="tab-2">
-              <form>
+              <form method="POST" action="/register">
                 <div>
                   <div class="text-center">
-                    <div class="text-left p-2"><label class="text-capitalize text-light">EMAIL&nbsp;</label></div>
-                    <div class="text-left"><input class="form-control" type="email"></div>
+                    <div class="text-left p-2">
+                      <label class="text-capitalize text-light">EMAIL&nbsp;</label>
+                    </div>
+                    <div class="text-left p-1">
+                      <input class="form-control" name ="regEmail" type="email" placeholder="Email" required>
+                    </div>
                   </div>
                   <div class="text-center">
-                    <div class="text-left p-2"><label class="text-light">FIRST NAME</label></div>
-                    <div class="text-left p-1"><input class="form-control reg-firstname" type="text"></div>
+                    <div class="text-left p-2">
+                      <label class="text-light">FIRST NAME</label>
+                    </div>
+                    <div class="text-left p-1">
+                      <input class="form-control reg-firstname" name ="regFirstname" type="text" required>
+                    </div>
                   </div>
                   <div class="text-center">
-                    <div class="text-left p-2"><label class="text-light">LAST NAME</label></div>
-                    <div class="text-left p-1"><input class="form-control reg-lastname" type="text"></div>
+                    <div class="text-left p-2">
+                      <label class="text-light">LAST NAME</label>
+                    </div>
+                    <div class="text-left p-1">
+                      <input class="form-control reg-lastname" name ="regLastname" type="text" required>
+                    </div>
                   </div>
                   <div class="text-center">
-                    <div class="text-left p-2"><label class="text-light">PASSWORD</label></div>
-                    <div class="text-left p-1"><input class="form-control" type="text"></div>
+                    <div class="text-left p-2">
+                      <label class="text-light">PASSWORD</label>
+                    </div>
+                    <div class="text-left p-1">
+                      <input class="form-control" name ="pwd" type="password" required>
+                    </div>
                   </div>
                   <div class="text-center">
-                    <div class="text-left p-2"><label class="text-light">CONFIRM PASSWORD<br></label></div>
-                    <div class="text-left p-1"><input class="form-control" type="text"></div>
+                    <div class="text-left p-2">
+                      <label class="text-light">CONFIRM PASSWORD<br></label>
+                    </div>
+                    <div class="text-left p-1">
+                      <input class="form-control" name ="rpwd" type="password" required>
+                    </div>
                   </div>
                   <div class="text-center">
-                    <div class="p-2"><button class="btn btn-primary" type="button">Register</button></div>
+                    <div class="p-2">
+                      <button class="btn btn-primary" type="submit">Register</button>
+                    </div>
                   </div>
                 </div>
               </form>
+              <p>DEBUG</p>
             </div>
           </div>
         </div>
