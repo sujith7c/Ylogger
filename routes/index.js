@@ -4,7 +4,8 @@ var mongoDB = require('../lib/db/mongo.js');
 const { check, validationResult } = require('express-validator/check');
 
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express DEBUG' });
+  res.render('index', { title: 'Express DEBUG', error : req.session.errors });
+  req.session.errors = null;
 });
 
 router.post('/userlogin', function(req, res) {
@@ -18,7 +19,9 @@ router.post('/userlogin', function(req, res) {
 * Register user page
 */
 router.post('/register', [
-  check('email').isEmail()
+  check('regEmail').isEmail(),
+  check('regFirstname').isAlpha(),
+  check('regLastname').isAlpha()
 ], (req, res, next) => {
 
   const errors = validationResult(req);
@@ -30,7 +33,22 @@ router.post('/register', [
   let rpassword = req.body.rpwd;
 
   if (!errors.isEmpty()) {
-    return res.status(422).json({ errors: errors.array() });
+    req.session.errors = errors.array();
+    console.log(req.session.errors);
+    //res.redirect('/');
+    res.render('index', {errors : req.session.errors})
+
+    //return res.status(422).json({ errors: errors.array() });
+  }
+  else {
+    let collection = 'users';
+    let query = {
+      email : email,
+      lastname : lastname,
+      firstname : firstname,
+      password : password
+    }
+    mongoDB.save(collection,query);
   }
 
  console.log(" FIRST " + firstname);
